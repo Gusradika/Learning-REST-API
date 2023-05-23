@@ -1,0 +1,33 @@
+
+[
+{
+    "nama" : "Aditya Kesuma",
+    "umur" : 22,
+    "nim" : "21410100039",
+    "lulus" : false,
+    "hobby" : [
+        "coding",
+        "Gaming"
+    ],
+    "dosen wali" : {
+        "doswal1" : "Tutut Wurjianto M.Kom",
+        "doswal2" : "Agus Dwi Churniawan M.Kom"
+    }
+},
+{
+    "nama" : "Aditya Kesuma",
+    "umur" : 22,
+    "nim" : "21410100039",
+    "lulus" : false,
+    "hobby" : [
+        "coding",
+        "Gaming"
+    ],
+    "dosen wali" : {
+        "doswal1" : "Tutut Wurjianto M.Kom",
+        "doswal2" : "Agus Dwi Churniawan M.Kom"
+    }
+}
+
+
+]
