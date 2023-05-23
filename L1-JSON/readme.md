@@ -56,14 +56,16 @@ echo $mhs[0];
         a : "1",
         b : "2",
         c : "3",
-    }
+    };
 
     console.log(JSON.stringify(data));
 
     // hasil berupa JSON
     // {"a": 1, "b": 2, "c": 3}
-    </code>
-    <li>JSON.parse</li>
+
+</code>
+
+<li>JSON.parse</li>
 
 </ul>
 
