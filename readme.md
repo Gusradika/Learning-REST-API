@@ -49,5 +49,47 @@
 </code>
 </ul>
  </ul>
- <li>JS</li>
+ <li>JavaScript</li>
+ <ul>
+    <li>JSON.stringify()</li>
+    <p>Parsing object / array to JSON</p>
+<code>
+    
+    var data = {
+        a : "1",
+        b : "2",
+        c : "3",
+    }
+
+    console.log(JSON.stringify(data));
+
+    // hasil berupa JSON
+    // {"a": 1, "b": 2, "c": 3}
+
+</code>
+
+<li>JSON.parse</li>
+<p>Me-request file JSO lalu mengubahnya menjadi object (menggunakan HTMLHttpRequest)</p>
+
+<code>
+
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+        if(xhr.readyState === 4 && xhr.status === 200){
+            var data = JSON.parse(this.responseText);
+            console.log(data);
+        }
+    }
+    xhr.open('GET', 'data.json', true);
+    xhr.send();
+
+</code>
+
+</ul>
+
+<h2>Mengakses JSON</h2>
+<ul>
+    <li>XMLHttpRequest</li>
+    <li>JQuery</li>
+<ul>
 </ol>
