@@ -93,3 +93,10 @@
     <li>JQuery</li>
 <ul>
 </ol>
+<br>
+<hr>
+<br>
+
+<h2>CORS</h2>
+<p>CORS merupakan singkatan dari Cross-Origin Resource Sharing. Ini adalah sebuah mekanisme keamanan yang digunakan oleh browser web untuk membatasi akses lintas domain terhadap sumber daya yang dimuat dari sumber daya asal (origin) yang berbeda. Origin mengacu pada protokol, domain, dan nomor port dari URL.</p>
+<p>CORS adalah sistem keamanan antar server yang mengatur perizinan permintaan resource dari alamat yang berbeda.</p>

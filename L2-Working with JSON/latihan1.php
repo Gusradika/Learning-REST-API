@@ -52,6 +52,7 @@ var_dump($menu[0]["nama"]);
         </div>
 
 
+
         <div class="row">
             <?php foreach ($menu as $menuSatuan) : ?>
                 <div class="col-4 mb-4">
@@ -66,12 +67,9 @@ var_dump($menu[0]["nama"]);
                         </div>
                     </div>
                 </div>
-
-
-
-
             <?php endforeach; ?>
         </div>
+
 
 
         <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
