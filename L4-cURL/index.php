@@ -1,21 +1,43 @@
 <?php
 // OPEN API dengan menggunakan teknik CURL
 
-$curl = curl_init();
-curl_setopt($curl, CURLOPT_URL, 'https://www.googleapis.com/youtube/v3/channels?part=snippet,statistics&key=AIzaSyB78WKiXBRjqca67N3nRjtAmutUHk5wT_Q&id=UC0e-vcnBu0nUrfrY5ffcDmQ');
-curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
-$result = curl_exec($curl);
-curl_close($curl);
 
-$result = json_decode($result, true);
 
+
+
+
+
+function get_CURL($url)
+{
+  $curl = curl_init();
+  curl_setopt($curl, CURLOPT_URL, $url);
+  curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+  $result = curl_exec($curl);
+  curl_close($curl);
+
+  // var_dump($channelName);
+  return $result = json_decode($result, true);
+};
+
+
+// Get Data Analytic Video
+
+$result = get_CURL('https://www.googleapis.com/youtube/v3/channels?part=snippet,statistics&key=AIzaSyB78WKiXBRjqca67N3nRjtAmutUHk5wT_Q&id=UC0e-vcnBu0nUrfrY5ffcDmQ');
 
 $profilePicUrl = $result['items'][0]['snippet']['thumbnails']['medium']['url'];
 $channelName = $result['items'][0]['snippet']['title'];
 $channelSub = $result['items'][0]['statistics']['subscriberCount'];
 
 
-var_dump($channelName);
+
+// Get Latest Video
+
+$result = get_CURL('https://www.googleapis.com/youtube/v3/search?key=AIzaSyB78WKiXBRjqca67N3nRjtAmutUHk5wT_Q&channelId=UC0e-vcnBu0nUrfrY5ffcDmQ&maxResults=1&order=date&part=snippet');
+
+$latestVideoUrl = $result['items'][0]['id']['videoId'];
+
+
+
 
 ?>
 
@@ -112,6 +134,7 @@ var_dump($channelName);
             <div class="col-md-8">
               <h5><?= $channelName ?></h5>
               <p><?= $channelSub ?> Subscriber.</p>
+              <div class="g-ytsubscribe" data-channelid="UC0e-vcnBu0nUrfrY5ffcDmQ" data-layout="default" data-count="default"></div>
             </div>
           </div>
 
@@ -300,6 +323,7 @@ var_dump($channelName);
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+  <script src="https://apis.google.com/js/platform.js"></script>
 </body>
 
 </html>
